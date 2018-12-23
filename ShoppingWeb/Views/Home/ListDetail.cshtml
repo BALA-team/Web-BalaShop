@@ -1,0 +1,49 @@
+﻿@model ShoppingWeb.Models.ProductModel
+@{
+    ViewBag.Title = "ListDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Sync", "List"))
+            {
+                int i = 0;
+                foreach (var l in Model.Product.ToList())
+                {
+
+        <div class="row p-3">
+            <div class="col-md-6">
+                <label>@Html.DisplayFor(m => m.Product[i].ProductName)</label>
+                @Html.HiddenFor(m => m.Product[i].ProductName)
+                @Html.HiddenFor(m=>m.Product[i].ProductId)
+                @Html.HiddenFor(m => m.Product[i].ListId)
+            </div>
+            <div class="col-md-6 text-right">
+                @Html.CheckBoxFor(m => m.Product[i].IsBought)
+            </div>
+        </div>
+
+        i++;
+
+    }
+    <div class="row p-3">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="submit" class="btn btn-success custom-button-width .navbar-right float-right" id="btnLogin">Synchronizuj</button>
+
+        </div>
+    </div>
+    
+}
+
+
+
+<div class="row p-3">
+    <div class="col-md-6 text-right">
+        @Html.ActionLink("Dodaj product", "Add", "List", new { id = ViewBag.ListId.ToString() }, new { @class = "btn btn-info custom-button-width .navbar-right" })
+
+    </div>
+</div>
+
+<
+

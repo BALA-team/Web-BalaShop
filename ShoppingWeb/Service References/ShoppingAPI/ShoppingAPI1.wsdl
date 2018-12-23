@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ShoppingAPI" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ShoppingAPI" />
+      <xsd:import schemaLocation="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IShopping_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetProductsFromList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromList" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetProductsFromList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CreateNewList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewList" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CreateNewList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_AddProductToList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToList" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_AddProductToList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Sync_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sync" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Sync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Share_InputMessage">
+    <wsdl:part name="parameters" element="tns:Share" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_Share_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserId" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_GetUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CheckLoginIsExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginIsExist" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CheckLoginIsExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginIsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CheckEmailIsExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEmailIsExist" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_CheckEmailIsExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEmailIsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_DeleteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteList" />
+  </wsdl:message>
+  <wsdl:message name="IShopping_DeleteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IShopping">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/Register" message="tns:IShopping_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/RegisterResponse" message="tns:IShopping_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/Login" message="tns:IShopping_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/LoginResponse" message="tns:IShopping_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/GetUserList" message="tns:IShopping_GetUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/GetUserListResponse" message="tns:IShopping_GetUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/GetProductsFromList" message="tns:IShopping_GetProductsFromList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/GetProductsFromListResponse" message="tns:IShopping_GetProductsFromList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/CreateNewList" message="tns:IShopping_CreateNewList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/CreateNewListResponse" message="tns:IShopping_CreateNewList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/AddProductToList" message="tns:IShopping_AddProductToList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/AddProductToListResponse" message="tns:IShopping_AddProductToList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sync">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/Sync" message="tns:IShopping_Sync_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/SyncResponse" message="tns:IShopping_Sync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Share">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/Share" message="tns:IShopping_Share_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/ShareResponse" message="tns:IShopping_Share_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/GetUserId" message="tns:IShopping_GetUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/GetUserIdResponse" message="tns:IShopping_GetUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLoginIsExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/CheckLoginIsExist" message="tns:IShopping_CheckLoginIsExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/CheckLoginIsExistResponse" message="tns:IShopping_CheckLoginIsExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmailIsExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/CheckEmailIsExist" message="tns:IShopping_CheckEmailIsExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/CheckEmailIsExistResponse" message="tns:IShopping_CheckEmailIsExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShopping/DeleteList" message="tns:IShopping_DeleteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShopping/DeleteListResponse" message="tns:IShopping_DeleteList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IShopping" type="tns:IShopping">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IShopping/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IShopping/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://tempuri.org/IShopping/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromList">
+      <soap:operation soapAction="http://tempuri.org/IShopping/GetProductsFromList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewList">
+      <soap:operation soapAction="http://tempuri.org/IShopping/CreateNewList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToList">
+      <soap:operation soapAction="http://tempuri.org/IShopping/AddProductToList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sync">
+      <soap:operation soapAction="http://tempuri.org/IShopping/Sync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Share">
+      <soap:operation soapAction="http://tempuri.org/IShopping/Share" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <soap:operation soapAction="http://tempuri.org/IShopping/GetUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLoginIsExist">
+      <soap:operation soapAction="http://tempuri.org/IShopping/CheckLoginIsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmailIsExist">
+      <soap:operation soapAction="http://tempuri.org/IShopping/CheckEmailIsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteList">
+      <soap:operation soapAction="http://tempuri.org/IShopping/DeleteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShoppingAPI">
+    <wsdl:port name="BasicHttpBinding_IShopping" binding="tns:BasicHttpBinding_IShopping">
+      <soap:address location="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc/ShoppingAPI.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

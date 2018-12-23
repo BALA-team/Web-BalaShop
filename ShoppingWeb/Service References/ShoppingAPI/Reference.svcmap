@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6938b480-36db-4bf5-aad3-ed3e674f7b67" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShoppingAPI4.xsd" MetadataType="Schema" ID="3d465a8e-df4a-4181-935d-439d2cc1d68d" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShoppingAPI1.disco" MetadataType="Disco" ID="4b352fa4-59bc-481e-8e5e-a7f85cf8d798" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?disco" />
+    <MetadataFile FileName="ShoppingAPI41.xsd" MetadataType="Schema" ID="02632557-6f0a-4bfe-aaba-63228426c150" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShoppingAPI1.wsdl" MetadataType="Wsdl" ID="b0d14e45-e42b-4dc0-8288-f703ba72ebc5" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?wsdl" />
+    <MetadataFile FileName="ShoppingAPI42.xsd" MetadataType="Schema" ID="0e41c049-564b-45e3-9266-e596e07ab2f0" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShoppingAPI43.xsd" MetadataType="Schema" ID="befe004e-dca3-4491-ad40-79652f1354fa" SourceId="1" SourceUrl="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

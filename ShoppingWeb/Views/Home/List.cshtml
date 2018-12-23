@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ShoppingWeb.ShoppingAPI.ListUser>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @foreach (var l in Model)
+    {
+        //using (Html.BeginForm("ListDetail", "Home", FormMethod.Post, new { id = "111" }))
+        //{
+            <div class="row p-3">
+                <div class="col-md-6">
+                    <label>@Html.DisplayFor(Model => l.ListName)</label>
+                </div>
+                <div class="col-md-6 text-right">
+                    @Html.ActionLink("Usuń listę", "Delete", "List", new { listId = l.ListId.ToString(),userId = Session["userId"].ToString() }, new { @class = "btn btn-info custom-button-width .navbar-right" })
+                    @Html.ActionLink("Pokaz liste", "ListDetail", "Home", new { id = l.ListId.ToString() }, new { @class = "btn btn-info custom-button-width .navbar-right" })
+                </div>
+            </div>
+        @*}*@
+
+    }
+    @using (Html.BeginForm("Create", "List"))
+    {
+
+        <div class="row p-3">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="submit" class="btn btn-success custom-button-width .navbar-right">Dodaj nowa liste</button>
+
+            </div>
+        </div>
+
+    }
+
+</div>
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ShoppingAPI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ShoppingAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://shoppingapipz.azurewebsites.net/ShoppingAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfListUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListUser" nillable="true" type="tns:ListUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListUser" nillable="true" type="tns:ArrayOfListUser" />
+  <xs:complexType name="ListUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ListName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListUser" nillable="true" type="tns:ListUser" />
+  <xs:complexType name="ArrayOfListProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListProduct" nillable="true" type="tns:ListProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListProduct" nillable="true" type="tns:ArrayOfListProduct" />
+  <xs:complexType name="ListProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsBought" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListProduct" nillable="true" type="tns:ListProduct" />
+</xs:schema>
